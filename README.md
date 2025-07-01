@@ -26,6 +26,8 @@
 
 ---
 
+![image_alt](https://github.com/abhinav7289A/Travel_Agent/blob/main/Editor%20_%20Mermaid%20Chart-2025-07-01-060423.png?raw=true)
+
 ## 🛠️ Technologies Used
 
 | Component       | Technology                            |
