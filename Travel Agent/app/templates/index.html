@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Travel Itinerary Summary</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f7fa;
+      color: #333;
+      padding: 2rem;
+    }
+    .card {
+      background: #fff;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #1f3a93;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    thead { background-color: #1f3a93; color: #fff; }
+    th, td { padding: 0.75rem 1rem; text-align: left; }
+    tbody tr:nth-child(even) { background-color: #f9fbfd; }
+    tbody tr:hover { background-color: #e6f2ff; }
+    th { font-weight: 600; text-transform: uppercase; font-size: 0.875rem; }
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      .card { padding: 1rem; }
+      th, td { padding: 0.5rem; font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Travel Itinerary Summary</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Vendor</th>
+          <th>Code</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>From</th>
+          <th>To</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for trip in trips %}
+        <tr>
+          <td>{{ trip.vendor or "-" }}</td>
+          <td>{{ trip.reservation_code or "-" }}</td>
+          <td>{{ trip.start_date or "-" }}</td>
+          <td>{{ trip.end_date or "-" }}</td>
+          <td>{{ trip.origin or "-" }}</td>
+          <td>{{ trip.destination or "-" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
